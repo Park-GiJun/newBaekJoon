@@ -1,8 +1,7 @@
 package q2798;
 
 import java.io.*;
-import java.math.BigInteger;
-import java.util.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
@@ -13,29 +12,32 @@ public class Main {
 
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		BigInteger n = BigInteger.valueOf(Long.parseLong(st.nextToken()));
-		BigInteger m = BigInteger.valueOf(Long.parseLong(st.nextToken()));
+		int n = Integer.parseInt(st.nextToken());
+		int m = Integer.parseInt(st.nextToken());
 
-		int[] arr = new int[Integer.parseInt(String.valueOf(n))];
-		int sum = 0;
-
-		for (int num : arr) {
-			sum += num;
+		int[] arr = new int[n];
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < n; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		for (int i = 0; i < Integer.parseInt(String.valueOf(n)); i++) {
-			for (int j = 1; j < Integer.parseInt(String.valueOf(n)); j++) {
-				int sumA = arr[i] + arr[j];
-				if (Integer.parseInt(String.valueOf(m)) == (sum - sumA)) {
-					bw.write(String.valueOf(sum - sumA));
+		int maxSum = 0;
+
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = i + 1; j < n - 1; j++) {
+				for (int k = j + 1; k < n; k++) {
+					int sum = arr[i] + arr[j] + arr[k];
+					if (sum <= m && sum > maxSum) {
+						maxSum = sum;
+					}
 				}
 			}
 		}
 
+		bw.write(String.valueOf(maxSum));
+
 		bw.flush();
 		bw.close();
 		br.close();
-
 	}
-
 }
