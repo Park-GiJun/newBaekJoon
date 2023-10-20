@@ -1,7 +1,8 @@
 package q10815;
 
-import java.util.*;
 import java.io.*;
+import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Main {
 
@@ -12,34 +13,24 @@ public class Main {
 
 		int n = Integer.parseInt(br.readLine());
 
-		Map<Integer, Integer> mapN = new HashMap<>();
-		Map<Integer, Integer> mapM = new HashMap<>();
+		HashMap<Integer, Boolean> mapN = new HashMap<>();
 
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		for (int i = 1; i <= n; i++) {
-			mapN.put(Integer.parseInt(st.nextToken()), i);
+		for (int i = 0; i < n; i++) {
+			mapN.put(Integer.parseInt(st.nextToken()), true);
 		}
 
 		int m = Integer.parseInt(br.readLine());
 		st = new StringTokenizer(br.readLine(), " ");
-		for (int i = 1; i <= m; i++) {
-			mapM.put(Integer.parseInt(st.nextToken()), i);
-		}
-
-		List<Integer> ans = new ArrayList<>();
-
-		for (int i = 1; i <= n; i++) {
-			for (int j = 1; j <= m; j++) {
-				if (mapN.get(i).equals(mapM.get(j))) {
-					ans.add(1);
-				} else {
-					ans.add(0);
-				}
+		for (int i = 0; i < m; i++) {
+			int num = Integer.parseInt(st.nextToken());
+			if (mapN.containsKey(num)) {
+				bw.write("1 ");
+			} else {
+				bw.write("0 ");
 			}
 		}
-		for (int num : ans) {
-			bw.write(num + " ");
-		}
+
 		bw.flush();
 		bw.close();
 		br.close();
