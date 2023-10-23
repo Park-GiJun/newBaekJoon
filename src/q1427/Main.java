@@ -15,7 +15,7 @@ public class Main {
 
 		String[] arr = a.split("");
 		Arrays.sort(arr);
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<>();
 		for (int i = 0; i < arr.length; i++) {
 			list.add(Integer.parseInt(arr[i]));
 		}
