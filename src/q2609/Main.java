@@ -1,3 +1,5 @@
+package q2609;
+
 import java.util.Scanner;
 
 public class Main {
