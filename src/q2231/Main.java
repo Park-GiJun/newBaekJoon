@@ -6,23 +6,33 @@ package q2231;
 //자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오.
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
-	public static void main(String[] args) throws NumberFormatException, IOException {
+    public static void main(String[] args) throws NumberFormatException, IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		// input m = n + a + b+ c +d + etc...
+        // input m = n + a + b+ c +d + etc...
 
-		int m = Integer.parseInt(br.readLine());
+        String m = br.readLine();
+        String[] arr = new String[m.length()];
 
-		boolean correct = true;
-		List<Integer> list = new ArrayList<Integer>();
-		while (correct) {
+        int k = 0;
+        while (k == Integer.parseInt(m)) {
 
-		}
-	}
+        }
+        for (int i = 0; i < m.length(); i++) {
+            arr[i] = String.valueOf(m.charAt(i));
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (String a : arr) {
+            sb.append(a);
+        }
+        System.out.println(sb.toString());
+
+        int intM = Integer.parseInt(sb.toString());
+    }
 
 }
