@@ -54,7 +54,7 @@ public class Main {
             }
         }
 
-        System.out.println(infectedCount-1);
+        System.out.println(infectedCount - 1);
     }
 }
 
